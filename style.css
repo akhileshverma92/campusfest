@@ -50,6 +50,7 @@ body {
 
 .navbar-menu li a:hover {
     color: #ff5733;
+    text-shadow: 0 0 5px #ff5733;
 }
 
 /* Toggle Button for Mobile */
@@ -149,6 +150,19 @@ header {
     font-size: 3em;
     margin-bottom: 10px;
 }
+
+.hero-content h1{
+    text-shadow: 0 0 5px #fff;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
 
 .hero p {
     font-size: 1.5em;
