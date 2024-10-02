@@ -118,16 +118,31 @@ header {
 }
 /* Hero Section Styles */
 .hero {
-    background-image: url('assets/images/event-background.jpg'); /* Add a background image */
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    overflow: hidden;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+.hero-content {
     position: relative;
+    z-index: 1;
 }
 
 .hero::before {
@@ -138,12 +153,9 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6); /* Dark overlay to make text more visible */
+    z-index: 1; /* Ensure overlay is above the video but below the text */
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
 
 .hero h1 {
     font-size: 3em;
