@@ -517,6 +517,112 @@ footer {
     }
 }
 
+/* Footer Styling */
+
+footer {
+    background: linear-gradient(135deg, #1c1c1c, #2e2e2e); /* Luxurious gradient background */
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03); /* Adding a subtle texture overlay */
+    z-index: -1;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+    text-align: left;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #f1c40f;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.7;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f1c40f;
+}
+
+.social-icons {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: #ffffff;
+    margin: 0 15px;
+    font-size: 28px;
+    background-color: rgba(241, 196, 15, 0.1); /* Light golden background for icons */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow to give depth */
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-8px); /* Lifting effect on hover */
+    background-color: #f1c40f;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+p a{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+p a:hover{
+    color:#f1c40f;
+    transition:color 0.4s ease;
+}
+.footer-sections p {
+    margin-bottom: 0;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .registration-form h2 {
@@ -534,5 +640,20 @@ footer {
 
     .btn-register {
         font-size: 1.1em;
+    }
+    /* Footer responsivness */
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .social-icons a {
+        font-size: 24px;
+        margin: 10px 10px;
     }
 }
