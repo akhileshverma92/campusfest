@@ -5,6 +5,23 @@ const menuToggle = document.getElementById('mobile-menu');
         menuToggle.classList.toggle('active');
         navbarMenu.classList.toggle('active');
     });
+
+const scrollLinks = document.querySelectorAll('.navbar-menu a');
+
+scrollLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
 document.getElementById('registration-form').addEventListener('submit', function(event) {
     event.preventDefault();
     

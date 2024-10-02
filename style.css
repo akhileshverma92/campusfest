@@ -425,45 +425,53 @@ footer {
 }
 
 /* Input Group Styles */
-.input-group {
-    margin-bottom: 20px;
-    text-align: left;
-    position: relative;
-}
-
-.input-group label {
-    display: block;
-    font-size: 1.1em;
-    margin-bottom: 5px;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-in-out forwards;
-}
-
 .input-group input,
 .input-group select {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: #555;
-    color: white;
-    transition: all 0.3s ease;
+    width: 100%; 
+    max-width: 600px; 
+    padding: 10px; 
+    border: 2px solid #ccc; 
+    border-radius: 10px; 
+    font-size: 1.1em; 
+    background-color: #444; 
+    color: white; 
+    transition: all 0.3s ease; 
     opacity: 0;
     animation: fadeInUp 1s ease-in-out forwards;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3); 
+    margin-bottom: 20px;
 }
 
-.input-group input::placeholder {
-    color: #ccc;
+.input-group input::placeholder,
+.input-group select option {
+    color: white; 
 }
 
 .input-group input:focus,
 .input-group select:focus {
-    background-color: #666;
+    background-color: #555; 
+    border-color: #ff5733; 
     outline: none;
-    box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    box-shadow: 0 0 12px rgba(255, 87, 51, 0.6); 
 }
 
+.input-gro
+.input-group input:hover,
+.input-group select:hover {
+    border-color: #ff5733; 
+    box-shadow: 0 0 8px rgba(255, 87, 51, 0.4);
+}
+
+.input-group label {
+    font-size: 1.2em; 
+    color: #ffffff; 
+    font-weight: bold; 
+    margin-bottom: 8px; 
+    display: block;
+}
+
+
+/* Updated styles for the Register Now button */
 .btn-register {
     display: inline-block;
     padding: 15px 30px;
@@ -475,15 +483,18 @@ footer {
     font-weight: bold;
     font-size: 1.2em;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     animation: fadeInUp 1.2s ease-in-out forwards;
+    box-shadow: 0 4px 15px rgba(255, 87, 51, 0.5);
 }
 
 .btn-register:hover {
     background-color: #c63d14;
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(198, 61, 20, 0.8); /* Adds a more pronounced shadow on hover */
 }
+
 
 /* Animations */
 @keyframes fadeIn {
