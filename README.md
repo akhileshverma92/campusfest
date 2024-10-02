@@ -63,7 +63,7 @@ Before you begin, ensure you have the following installed on your system:
 
 We welcome contributions to improve the website’s user interface, user experience, and features. Whether you’re an experienced developer or a beginner, there’s something for everyone to contribute!
 
-## You can create your own issue and i will assign them to you🚀:|
+## You can create your own issue and I will assign it to you🚀
 
 ### How to Contribute
 
