@@ -4,113 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Club Event</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="#hero">College Event</a>
+<body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#hero" class="text-white font-bold text-xl">College Event</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#hero" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                        <a href="#schedule" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Event Schedule</a>
+                        <a href="#register" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="navbar-menu">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#schedule">Event Schedule</a></li>
-                <li><a href="#register">Register</a></li>
-            </ul>
         </div>
     </nav>
-    
-    <header class="hero" id="hero">
-        <div class="hero-content">
-            <h1>College Club Annual Event 2024</h1>
-            <p>Join us for an unforgettable experience filled with workshops, competitions, and networking!</p>
-            <p><strong>Date:</strong> November 12, 2024</p>
-            <a href="#register" class="btn">Register Now</a>
+
+    <!-- Hero Section -->
+    <header id="hero" class="relative bg-gray-900 h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">College Club Annual Event 2024</h1>
+            <p class="text-xl md:text-2xl mb-6">Join us for an unforgettable experience filled with workshops, competitions, and networking!</p>
+            <p class="text-lg mb-8"><strong>Date:</strong> November 12, 2024</p>
+            <a href="#register" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition duration-300">Register Now</a>
         </div>
     </header>
-    
-    
-    <section id="about" class="about-us">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="./about_img.jpeg" alt="College Club Event">
-            </div>
-            <div class="about-text">
-                <h2>About the Event</h2>
-                <p>
-                    The College Club Annual Event 2024 is your opportunity to connect, learn, and compete with like-minded peers. 
-                    Our event features expert-led workshops, intense programming competitions, and valuable networking opportunities 
-                    with industry professionals.
-                </p>
-                <p>
-                    Whether you're a beginner or an expert, there's something for everyone. Don't miss out on the chance to be part 
-                    of this inspiring day of learning and fun!
-                </p>
-            </div>
-         
-        </div>
-    </section>
-    
-    <section id="schedule" class="event-schedule">
-        <div class="schedule-container">
-            <h2>Event Schedule</h2>
-            <div class="schedule-grid">
-                <div class="schedule-item">
-                    <h3>Workshop on AI</h3>
-                    <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
-                    <p>Learn the fundamentals of Artificial Intelligence and its real-world applications in this expert-led workshop.</p>
+
+    <!-- About Section - Full Page -->
+    <section id="about" class="min-h-screen bg-gradient-to-b from-white to-gray-100 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-bold text-center mb-16" data-aos="fade-up">About the Event</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8" data-aos="fade-right">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-orange-500">Innovation & Learning</h3>
+                        <p class="text-gray-600 text-lg">
+                            Immerse yourself in cutting-edge technology and innovative ideas. Our event brings together industry experts and passionate learners for an unparalleled educational experience.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right" data-aos-delay="200">
+                        <h3 class="text-2xl font-semibold mb-4 text-orange-500">Networking Opportunities</h3>
+                        <p class="text-gray-600 text-lg">
+                            Connect with like-minded individuals, industry professionals, and potential mentors. Build relationships that could shape your future career in technology.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right" data-aos-delay="400">
+                        <h3 class="text-2xl font-semibold mb-4 text-orange-500">Hands-on Experience</h3>
+                        <p class="text-gray-600 text-lg">
+                            Don't just listen - do! Participate in workshops and competitions that challenge your skills and push your boundaries in a supportive environment.
+                        </p>
+                    </div>
                 </div>
-                <div class="schedule-item">
-                    <h3>Programming Competition</h3>
-                    <p><strong>Time:</strong> 1:00 PM - 3:00 PM</p>
-                    <p>Put your coding skills to the test and compete against peers in an intense programming competition.</p>
-                </div>
-                <div class="schedule-item">
-                    <h3>Networking Session</h3>
-                    <p><strong>Time:</strong> 4:00 PM - 6:00 PM</p>
-                    <p>Connect with industry professionals, students, and enthusiasts in a relaxed networking environment.</p>
+                <div class="relative" data-aos="fade-left">
+                    <img src="/api/placeholder/600/800" alt="Event Preview" class="rounded-2xl shadow-2xl mx-auto">
+                    <div class="absolute -bottom-8 -right-8 bg-orange-500 text-white p-6 rounded-lg shadow-lg">
+                        <p class="text-2xl font-bold">500+</p>
+                        <p class="text-sm">Expected Participants</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section id="register" class="registration-form">
-        <div class="form-container">
-            <h2>Register Now</h2>
-            <form id="registration-form">
-                <div class="input-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Enter your full name" required>
+
+    <!-- Schedule Section - Full Page -->
+    <section id="schedule" class="min-h-screen bg-gray-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-bold text-center mb-16" data-aos="fade-up">Event Schedule</h2>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-500"></div>
+                
+                <!-- Schedule Items -->
+                <div class="space-y-24">
+                    <!-- Morning Session -->
+                    <div class="flex flex-col lg:flex-row items-center justify-between" data-aos="fade-up">
+                        <div class="lg:w-5/12 p-8 bg-gray-800 rounded-xl shadow-lg mb-8 lg:mb-0">
+                            <h3 class="text-3xl font-bold text-orange-500 mb-4">Morning Kickoff</h3>
+                            <p class="text-xl mb-4"><span class="text-orange-400">9:00 AM - 10:00 AM</span></p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-300">
+                                <li>Registration and Check-in</li>
+                                <li>Welcome Address</li>
+                                <li>Keynote Speaker: Future of Tech</li>
+                            </ul>
+                        </div>
+                        <div class="hidden lg:block w-2/12 text-center">
+                            <div class="w-8 h-8 bg-orange-500 rounded-full mx-auto"></div>
+                        </div>
+                        <div class="lg:w-5/12 p-8 bg-gray-800 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="text-3xl font-bold text-orange-500 mb-4">AI Workshop</h3>
+                            <p class="text-xl mb-4"><span class="text-orange-400">10:00 AM - 12:00 PM</span></p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-300">
+                                <li>Introduction to AI Concepts</li>
+                                <li>Hands-on Machine Learning</li>
+                                <li>Q&A with AI Experts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Afternoon Session -->
+                    <div class="flex flex-col lg:flex-row items-center justify-between" data-aos="fade-up">
+                        <div class="lg:w-5/12 p-8 bg-gray-800 rounded-xl shadow-lg mb-8 lg:mb-0">
+                            <h3 class="text-3xl font-bold text-orange-500 mb-4">Programming Competition</h3>
+                            <p class="text-xl mb-4"><span class="text-orange-400">1:00 PM - 3:00 PM</span></p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-300">
+                                <li>Algorithmic Challenges</li>
+                                <li>Team Coding Sprints</li>
+                                <li>Live Code Reviews</li>
+                            </ul>
+                        </div>
+                        <div class="hidden lg:block w-2/12 text-center">
+                            <div class="w-8 h-8 bg-orange-500 rounded-full mx-auto"></div>
+                        </div>
+                        <div class="lg:w-5/12 p-8 bg-gray-800 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="text-3xl font-bold text-orange-500 mb-4">Networking Session</h3>
+                            <p class="text-xl mb-4"><span class="text-orange-400">4:00 PM - 6:00 PM</span></p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-300">
+                                <li>Industry Mixer</li>
+                                <li>Project Showcases</li>
+                                <li>Closing Ceremony & Awards</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="register" class="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">Register Now</h2>
+            <form class="bg-white p-8 rounded-lg shadow-lg">
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required
+                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500">
                 </div>
-                <div class="input-group">
-                    <label for="event">Choose Event</label>
-                    <select id="event" required>
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required
+                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500">
+                </div>
+                <div class="mb-6">
+                    <label for="event" class="block text-gray-700 font-semibold mb-2">Choose Event</label>
+                    <select id="event" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500">
                         <option value="">Select an event</option>
                         <option value="ai-workshop">AI Workshop</option>
                         <option value="programming-competition">Programming Competition</option>
                         <option value="networking-session">Networking Session</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-register">Submit Registration</button>
+                <button type="submit" 
+                        class="w-full bg-orange-500 text-white font-bold py-3 px-4 rounded-md hover:bg-orange-600 transition duration-300">
+                    Submit Registration
+                </button>
             </form>
         </div>
     </section>
-    
-    <footer>
-        <p>&copy; 2024 College Club. All rights reserved.</p>
-        <p>GITHUB LINK <a href="https://github.com/akhileshverma92/campusfest">CLICK HERE</a></p>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-2">&copy; 2024 College Club. All rights reserved.</p>
+            <p>GITHUB LINK <a href="https://github.com/akhileshverma92/campusfest" class="text-orange-400 hover:text-orange-300">CLICK HERE</a></p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+        });
+    </script>
 </body>
 </html>
