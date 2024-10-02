@@ -39,41 +39,54 @@
         </div>
     </header>
 
-    <!-- About Section - Full Page -->
-    <section id="about" class="min-h-screen bg-gradient-to-b from-white to-gray-100 py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-5xl font-bold text-center mb-16" data-aos="fade-up">About the Event</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8" data-aos="fade-right">
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold mb-4 text-orange-500">Innovation & Learning</h3>
-                        <p class="text-gray-600 text-lg">
-                            Immerse yourself in cutting-edge technology and innovative ideas. Our event brings together industry experts and passionate learners for an unparalleled educational experience.
-                        </p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right" data-aos-delay="200">
-                        <h3 class="text-2xl font-semibold mb-4 text-orange-500">Networking Opportunities</h3>
-                        <p class="text-gray-600 text-lg">
-                            Connect with like-minded individuals, industry professionals, and potential mentors. Build relationships that could shape your future career in technology.
-                        </p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right" data-aos-delay="400">
-                        <h3 class="text-2xl font-semibold mb-4 text-orange-500">Hands-on Experience</h3>
-                        <p class="text-gray-600 text-lg">
-                            Don't just listen - do! Participate in workshops and competitions that challenge your skills and push your boundaries in a supportive environment.
-                        </p>
-                    </div>
+<!-- About Section - Full Page -->
+<section id="about" class="min-h-screen bg-gradient-to-b from-white to-gray-100 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-5xl font-bold text-center mb-16" data-aos="fade-up">About the Event</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <!-- Left side - Feature cards -->
+            <div class="space-y-8" data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Innovation & Learning</h3>
+                    <p class="text-gray-600 text-lg">
+                        Immerse yourself in cutting-edge technology and innovative ideas. Our event brings together industry experts and passionate learners for an unparalleled educational experience.
+                    </p>
                 </div>
-                <div class="relative" data-aos="fade-left">
-                    <img src="/api/placeholder/600/800" alt="Event Preview" class="rounded-2xl shadow-2xl mx-auto">
-                    <div class="absolute -bottom-8 -right-8 bg-orange-500 text-white p-6 rounded-lg shadow-lg">
-                        <p class="text-2xl font-bold">500+</p>
-                        <p class="text-sm">Expected Participants</p>
-                    </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right" data-aos-delay="200">
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Networking Opportunities</h3>
+                    <p class="text-gray-600 text-lg">
+                        Connect with like-minded individuals, industry professionals, and potential mentors. Build relationships that could shape your future career in technology.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right" data-aos-delay="400">
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Hands-on Experience</h3>
+                    <p class="text-gray-600 text-lg">
+                        Don't just listen - do! Participate in workshops and competitions that challenge your skills and push your boundaries in a supportive environment.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Right side - Image and participants box -->
+            <div class="relative" data-aos="fade-left">
+                <!-- Image with height reduced by 30px -->
+                <div class="mb-8">
+                    <img 
+                        src="./about_img.jpeg" 
+                        alt="College Club Event" 
+                        class="object-cover w-full rounded-2xl shadow-2xl"
+                        style="height: calc(100% - 30px);"
+                    >
+                </div>
+                <!-- Participants box below the image -->
+                <div class="bg-orange-500 text-white p-8 rounded-xl shadow-xl">
+                    <p class="text-4xl font-bold mb-2">500+</p>
+                    <p class="text-lg font-medium">Expected Participants</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Schedule Section - Full Page -->
     <section id="schedule" class="min-h-screen bg-gray-900 text-white py-20">
