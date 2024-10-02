@@ -22,6 +22,29 @@ scrollLinks.forEach(link => {
     });
 });
 
+const checkbox = document.getElementById('check');
+const moonIcon = document.getElementById('dark-mode-toggle2')
+const sunIcon = document.getElementById('dark-mode-toggle')
+
+checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        moonIcon.style.display = 'block';
+        sunIcon.style.display = 'none';
+        document.body.classList.add('dark');
+        document.body.classList.remove('light');
+    } else {
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'block';
+        document.body.classList.add('light');
+        document.body.classList.remove('dark');
+    }
+});
+
+window.onload = function() {
+    document.body.classList.add('light');
+    document.body.classList.remove('dark');
+}
+
 document.getElementById('registration-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
