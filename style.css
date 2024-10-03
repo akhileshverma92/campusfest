@@ -518,9 +518,10 @@ footer {
 }
 
 /* Footer Styling */
-
 footer {
-    background: linear-gradient(135deg, #1c1c1c, #2e2e2e); /* Luxurious gradient background */
+    background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
+    background-size: 300% 300%;
+    animation: gradientShift 15s ease infinite; /* Animating the gradient */
     color: #ffffff;
     padding: 50px 20px;
     text-align: center;
@@ -535,7 +536,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.03); /* Adding a subtle texture overlay */
+    background: rgba(255, 255, 255, 0.03); /* Texture overlay */
     z-index: -1;
 }
 
@@ -560,14 +561,21 @@ footer::before {
     min-width: 250px;
     margin: 20px;
     text-align: left;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-section:hover {
+    transform: translateY(-10px); /* Floating effect */
 }
 
 .footer-section h4 {
     margin-bottom: 15px;
     font-weight: 600;
     color: #f1c40f;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 10px;
+    font-size: 18px;
+    border-bottom: none;
+    text-shadow: 0px 0px 10px rgba(241, 196, 15, 0.8); /* Glowing effect */
 }
 
 .footer-section p,
@@ -575,12 +583,13 @@ footer::before {
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     line-height: 1.7;
-    transition: color 0.3s ease-in-out;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 .footer-section a:hover {
     color: #f1c40f;
+    text-shadow: 0 0 5px #f1c40f; /* Glow on hover */
 }
 
 .social-icons {
@@ -593,16 +602,37 @@ footer::before {
     color: #ffffff;
     margin: 0 15px;
     font-size: 28px;
-    background-color: rgba(241, 196, 15, 0.1); /* Light golden background for icons */
+    background-color: rgba(241, 196, 15, 0.1);
     border-radius: 50%;
     padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow to give depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease, background-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .social-icons a:hover {
-    transform: translateY(-8px); /* Lifting effect on hover */
+    transform: translateY(-8px); /* Lifting effect */
     background-color: #f1c40f;
+}
+
+.social-icons a::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -75%;
+    left: -75%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+social-icons a:hover::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 p {
@@ -610,16 +640,13 @@ p {
     font-size: 14px;
 }
 
-p a{
+p a {
     color: rgba(255, 255, 255, 0.8);
 }
 
-p a:hover{
-    color:#f1c40f;
-    transition:color 0.4s ease;
-}
-.footer-sections p {
-    margin-bottom: 0;
+p a:hover {
+    color: #f1c40f;
+    transition: color 0.4s ease;
 }
 
 
@@ -655,5 +682,59 @@ p a:hover{
     .social-icons a {
         font-size: 24px;
         margin: 10px 10px;
+        padding: 8px;
     }
+}
+
+/* Specific design for Android/small screens (under 480px) */
+@media (max-width: 480px) {
+    footer {
+        padding: 30px 10px;
+        background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
+        background-size: 300% 300%;
+    }
+
+    .footer-section {
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .footer-section:hover {
+        transform: translateY(-5px); /* Slight rise effect on hover for Android */
+    }
+
+    .footer-section h4 {
+        font-size: 16px;
+        color: #f39c12; /* Slightly brighter heading on small screens */
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-section a:hover {
+        color: #f1c40f;
+        text-shadow: 0 0 5px #f1c40f;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+        padding: 5px;
+        margin: 8px 8px;
+        background-color: rgba(241, 196, 15, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-5px); /* Slight rise effect on hover for social icons */
+        background-color: #f1c40f;
+    }
+}
+
+/* Keyframes for background gradient animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
