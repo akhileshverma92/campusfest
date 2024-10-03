@@ -1,77 +1,90 @@
-const menuToggle = document.getElementById('mobile-menu');
-    const navbarMenu = document.querySelector('.navbar-menu');
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
 
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navbarMenu.classList.toggle('active');
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        updateThemeIcon();
+        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
     });
 
-const scrollLinks = document.querySelectorAll('.navbar-menu a');
+    // Check for saved user preference
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+    if (darkModeEnabled) {
+        body.classList.add('dark-mode');
+    }
+    updateThemeIcon();
 
-scrollLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+    function updateThemeIcon() {
+        const icon = themeToggle.querySelector('i');
+        if (body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
 
-        targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+    // Mobile menu toggle
+    mobileMenuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
         });
     });
-});
 
-const checkbox = document.getElementById('check');
-const moonIcon = document.getElementById('dark-mode-toggle2')
-const sunIcon = document.getElementById('dark-mode-toggle')
+    // Form submission
+    const form = document.getElementById('registration-form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const event = document.getElementById('event').value;
 
-checkbox.addEventListener('change', () => {
-    if (checkbox.checked) {
-        moonIcon.style.display = 'block';
-        sunIcon.style.display = 'none';
-        document.body.classList.add('dark');
-        document.body.classList.remove('light');
-    } else {
-        moonIcon.style.display = 'none';
-        sunIcon.style.display = 'block';
-        document.body.classList.add('light');
-        document.body.classList.remove('dark');
-    }
-});
-
-window.onload = function() {
-    document.body.classList.add('light');
-    document.body.classList.remove('dark');
-}
-
-document.getElementById('registration-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-
-    if (name && email) {
-        alert(`Thank you for registering, ${name}!`);
-    } else {
-        alert('Please fill out all fields.');
-    }
-});
-
- // Function to smooth scroll to a section
- function smoothScroll(target) {
-    const element = document.querySelector(target);
-    if (element) {
-      // Scroll into view with smooth behavior
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  // Event listeners for navbar links
-  document.querySelectorAll('.navbar-menu a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent the default anchor click behavior
-      const target = this.getAttribute('href'); // Get the target section ID
-      smoothScroll(target); // Call the smooth scroll function
+        if (name && email && event) {
+            alert(`Thank you for registering, ${name}! You've signed up for the ${event}.`);
+            form.reset();
+        } else {
+            alert('Please fill out all fields.');
+        }
     });
-  });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.about, .schedule, .register').forEach(section => {
+        observer.observe(section);
+    });
+});
