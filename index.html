@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Club Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,6 +24,12 @@
                 <li><a href="#schedule">Event Schedule</a></li>
                 <li><a href="#register">Register</a></li>
             </ul>
+            <button id="theme-toggle" class="btn" style="padding: 0.5rem .5rem;; border: none; border-radius: 5px; ; cursor: pointer; background: none ; color: white; font-size: 1rem;">
+                <i class="fas fa-sun" id="sun-icon" style= "margin-right: 0.5rem; color: black; "></i>
+                <i class="fas fa-moon" id="moon-icon" style="margin-right: 0.5rem; display: none;"></i>
+            </button>
+            
+            
         </div>
     </nav>
     
@@ -66,6 +73,7 @@
         <div class="schedule-container">
             <h2>Event Schedule</h2>
             <div class="schedule-grid">
+
                 <div class="schedule-item">
                     <h3>Workshop on AI</h3>
                     <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
@@ -116,6 +124,38 @@
         <p>GITHUB LINK <a href="https://github.com/akhileshverma92/campusfest">CLICK HERE</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+
+const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const navbar = document.querySelector('.navbar');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+
+        // Check for saved user preference in localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            navbar.classList.add('dark-mode');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) { // Dark mode
+                body.classList.remove('dark-mode');
+                navbar.classList.remove('dark-mode');
+                sunIcon.style.display = 'inline';
+                moonIcon.style.display = 'none';
+                localStorage.removeItem('theme');
+            } else { // Light mode
+                body.classList.add('dark-mode');
+                navbar.classList.add('dark-mode');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'inline';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+    </script>
 </body>
 </html>

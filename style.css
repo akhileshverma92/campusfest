@@ -1,13 +1,17 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 /* Navbar Styles */
 .navbar {
-    background-color: #333;
+    
+    background-color: #ffffff;
     position: fixed;
     width: 100%;
     top: 0;
@@ -25,7 +29,7 @@ body {
 }
 
 .navbar-logo a {
-    color: white;
+    color: #333;
     font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
@@ -38,13 +42,17 @@ body {
 }
 
 .navbar-menu li {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin-left: 20px;
 }
 
 .navbar-menu li a {
-    color: white;
+    color: #333;
     text-decoration: none;
     font-size: 1.1em;
+    font-weight: 400;
     transition: color 0.3s ease;
 }
 
@@ -67,6 +75,53 @@ body {
     transition: all 0.3s ease;
 }
 
+body.dark-mode {
+    background-color: #1c1c1c;
+    color: white;
+}
+
+.navbar.dark-mode {
+    background-color: #333;
+}
+.dark-mode .navbar-logo  {
+    background-color: #ffffff;
+}
+
+.dark-mode .navbar-menu li a{
+    color:#fff;
+}
+
+.btn.dark-mode {
+    background-color: #007bff;
+    color: white;
+}
+
+.about-text {
+    color: black; 
+}
+.dark-mode .about-us {
+    background-color: #333;
+
+}
+
+.dark-mode .about-text {
+    color: #ffffff;
+   
+}
+
+.dark-mode .event-schedule{
+    background-color: #333;
+    color: #fff;
+}
+.dark-mode .schedule-item{
+    background-color: #494949;
+    color: #fff;
+}
+
+#theme-toggle.light {
+    background-color: #f9f9f9; /* Light background for sun */
+    color: #333; }
+    
 /* Responsive Styles */
 @media (max-width: 768px) {
     .navbar-menu {
@@ -200,7 +255,7 @@ nav ul li a {
 /* About Us Section Styles */
 .about-us {
     padding: 60px 20px;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
 }
 
 .about-container {
@@ -241,7 +296,7 @@ nav ul li a {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive Design */
@@ -272,10 +327,23 @@ section {
 h1, h2 {
     text-align: center;
 }
+.dark-mode .registration-form{
+background-color: #333;
+color: #fff;
+}
 
+.dark-mode .form-container{
+   background-color: #333;
+}
+.dark-mode footer{
+    background: #333;
+    color: #fff;
+}
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #ffffff;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 10px 0;
     width: 100%;
@@ -295,14 +363,14 @@ footer {
     margin: 10px 0;
     padding: 10px;
     width: 80%;
-    border: 1px solid #ddd;
+    border: 1px solid #d1d1d1;
     border-radius: 4px;
 }
 
 #registration-form button {
     padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(197, 197, 197);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -315,6 +383,7 @@ footer {
 .event-schedule {
     padding: 60px 20px;
     background-color: #fefefe;
+    
     text-align: center;
 }
 
@@ -339,8 +408,8 @@ footer {
 }
 
 .schedule-item {
-    background-color: #333;
-    color: white;
+    background-color: #dadada;
+    color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
     position: relative;
@@ -412,8 +481,8 @@ footer {
 }
 /* Registration Form Section */
 .registration-form {
-    background-color: #333;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(48, 48, 48);
     padding: 60px 20px;
     text-align: center;
 }
@@ -428,9 +497,9 @@ footer {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #444;
+    background-color: #e7e6e6;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(255, 253, 253, 0.2);
     opacity: 0;
     transform: translateY(20px);
     animation: formSlideIn 1.5s ease-in-out forwards;
@@ -440,13 +509,15 @@ footer {
 .input-group input,
 .input-group select {
     width: 100%; 
+    font-family: 'Poppins';
+    font-weight: 500;
     max-width: 600px; 
     padding: 10px; 
     border: 2px solid #ccc; 
     border-radius: 10px; 
     font-size: 1.1em; 
-    background-color: #444; 
-    color: white; 
+    background-color: #ffffff; 
+    color: rgb(88, 88, 88); 
     transition: all 0.3s ease; 
     opacity: 0;
     animation: fadeInUp 1s ease-in-out forwards;
@@ -456,12 +527,14 @@ footer {
 
 .input-group input::placeholder,
 .input-group select option {
-    color: white; 
+    color: rgb(0, 0, 0); 
 }
 
 .input-group input:focus,
 .input-group select:focus {
-    background-color: #555; 
+    
+    background-color: #ffffff; 
+    color: #000000;
     border-color: #ff5733; 
     outline: none;
     box-shadow: 0 0 12px rgba(255, 87, 51, 0.6); 
@@ -476,7 +549,7 @@ footer {
 
 .input-group label {
     font-size: 1.2em; 
-    color: #ffffff; 
+    color: #fff3f3; 
     font-weight: bold; 
     margin-bottom: 8px; 
     display: block;
@@ -488,7 +561,7 @@ footer {
     display: inline-block;
     padding: 15px 30px;
     background-color: #ff5733;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 50px;
     text-transform: uppercase;
