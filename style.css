@@ -171,6 +171,13 @@ header {
     animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
 }
 
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 6vw; /* Adjust font size for smaller screens */
+        animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite; /* Slower typing for mobile */
+    }
+}
+
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
