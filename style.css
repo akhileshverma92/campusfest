@@ -520,13 +520,12 @@ footer {
 /* Footer Styling */
 footer {
     background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
-    background-size: 300% 300%;
-    animation: gradientShift 15s ease infinite; /* Animating the gradient */
     color: #ffffff;
     padding: 50px 20px;
     text-align: center;
     position: relative;
     z-index: 1;
+    perspective: 1000px; /* Adds depth to the 3D effects */
 }
 
 footer::before {
@@ -536,7 +535,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.03); /* Texture overlay */
+    background: rgba(255, 255, 255, 0.03);
     z-index: -1;
 }
 
@@ -554,6 +553,7 @@ footer::before {
     width: 100%;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    transform-style: preserve-3d; /* Enables 3D for child elements */
 }
 
 .footer-section {
@@ -562,11 +562,18 @@ footer::before {
     margin: 20px;
     text-align: left;
     position: relative;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    transform: rotateY(0deg) rotateX(0deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Default shadow */
+    overflow: hidden;
+    border-radius: 10px;
+    backface-visibility: hidden; /* Ensures 3D stays smooth */
 }
 
 .footer-section:hover {
-    transform: translateY(-10px); /* Floating effect */
+    transform: rotateY(15deg) rotateX(15deg) translateY(-10px); /* 3D hover tilt */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* More depth on hover */
+    border: 2px solid #f1c40f;
 }
 
 .footer-section h4 {
@@ -574,8 +581,7 @@ footer::before {
     font-weight: 600;
     color: #f1c40f;
     font-size: 18px;
-    border-bottom: none;
-    text-shadow: 0px 0px 10px rgba(241, 196, 15, 0.8); /* Glowing effect */
+    text-shadow: 0px 0px 10px rgba(241, 196, 15, 0.8);
 }
 
 .footer-section p,
@@ -589,13 +595,13 @@ footer::before {
 
 .footer-section a:hover {
     color: #f1c40f;
-    text-shadow: 0 0 5px #f1c40f; /* Glow on hover */
 }
 
 .social-icons {
     margin: 25px 0;
     display: flex;
     justify-content: center;
+    perspective: 1000px; /* Depth for the icons too */
 }
 
 .social-icons a {
@@ -606,47 +612,29 @@ footer::before {
     border-radius: 50%;
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s ease, background-color 0.4s ease;
     position: relative;
     overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
 }
 
-.social-icons a:hover {
-    transform: translateY(-8px); /* Lifting effect */
-    background-color: #f1c40f;
+p>a{
+    color:white;
 }
-
 .social-icons a::before {
     content: '';
     position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -75%;
-    left: -75%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transition: all 0.5s;
-}
-
-social-icons a:hover::before {
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: pulse 3s infinite; /* Glowing ripple effect */
+    z-index: -1;
 }
 
-p {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-p a {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-p a:hover {
-    color: #f1c40f;
-    transition: color 0.4s ease;
+.social-icons a:hover {
+    transform: translateY(-8px) rotateY(20deg) rotateX(10deg); /* 3D hover effect */
+    background-color: #f1c40f;
+    box-shadow: 0 10px 20px rgba(241, 196, 15, 0.5);
 }
 
 
@@ -686,55 +674,33 @@ p a:hover {
     }
 }
 
-/* Specific design for Android/small screens (under 480px) */
-@media (max-width: 480px) {
-    footer {
-        padding: 30px 10px;
-        background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
-        background-size: 300% 300%;
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
     }
-
-    .footer-section {
-        transition: transform 0.4s ease-in-out;
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
     }
-
-    .footer-section:hover {
-        transform: translateY(-5px); /* Slight rise effect on hover for Android */
-    }
-
-    .footer-section h4 {
-        font-size: 16px;
-        color: #f39c12; /* Slightly brighter heading on small screens */
-    }
-
-    .footer-section p,
-    .footer-section a {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.7);
-    }
-
-    .footer-section a:hover {
-        color: #f1c40f;
-        text-shadow: 0 0 5px #f1c40f;
-    }
-
-    .social-icons a {
-        font-size: 20px;
-        padding: 5px;
-        margin: 8px 8px;
-        background-color: rgba(241, 196, 15, 0.1);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .social-icons a:hover {
-        transform: translateY(-5px); /* Slight rise effect on hover for social icons */
-        background-color: #f1c40f;
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
     }
 }
 
-/* Keyframes for background gradient animation */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@media (max-width: 480px) {
+    .footer-section {
+        transform: rotateY(0) rotateX(0); /* No tilt effect on mobile */
+        box-shadow: none;
+    }
+
+    .footer-section:hover {
+        transform: translateY(-5px); /* Simple rise on hover */
+        border: none;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-5px);
+    }
 }
