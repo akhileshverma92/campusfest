@@ -381,56 +381,57 @@ footer {
     background-color: #555;
 }
 /* Event Schedule Section */
-.event-schedule {
-    padding: 60px 20px;
-    background-color: #fefefe;
+.section-title {
     text-align: center;
+    font-size: 2rem;
+    margin-top: 50px;
 }
 
-.event-schedule h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    animation: slideIn 1s ease-in-out;
+.card-container{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 100px;
+    margin: 50px auto;
+    padding: 60px 20px;
 }
 
-.schedule-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.schedule-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
-}
-
-.schedule-item {
+.card{
+    width: 325px;
     background-color: #333;
-    color: white;
-    padding: 20px;
     border-radius: 10px;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    animation: slideUp 0.7s ease forwards;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.6s ease;
 }
 
-.schedule-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.card:hover{
+    transform: translateY(-15px);
 }
 
-.schedule-item h3 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
+.card img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-.schedule-item p {
-    font-size: 1.1em;
-    line-height: 1.6;
+.card-content{
+    padding: 10px;
+}
+
+.card-content h1{
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card-content p{
+    font-size: 15px;
+    color: #ddd;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Animations */
@@ -465,20 +466,6 @@ footer {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .schedule-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .schedule-item h3 {
-        font-size: 1.6em;
-    }
-
-    .schedule-item p {
-        font-size: 1em;
-    }
-}
 /* Registration Form Section */
 .registration-form {
     background-color: #333;
