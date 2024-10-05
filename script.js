@@ -75,3 +75,13 @@ document.getElementById('registration-form').addEventListener('submit', function
       smoothScroll(target); // Call the smooth scroll function
     });
   });
+
+
+  document.addEventListener("mousemove", function (e) {
+    const follower = document.getElementById("mouseFollower");
+    
+    // Move the follower div to the mouse position
+    follower.style.left = `${e.clientX}px`;
+    follower.style.top = `${e.clientY}px`;
+  });
+  

@@ -564,6 +564,22 @@ footer {
 }
 
 
+/* Mouse follower*/
+/* Make the mouse follower element */
+.mouse-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(190, 190, 190, 0.5);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+  }
+  
+
+
 /* Animations */
 @keyframes fadeIn {
     from {
