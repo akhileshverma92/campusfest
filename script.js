@@ -1,4 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+
+    const form = document.getElementById('registration-form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const event = document.getElementById('event').value;
+ 
+        
+        // console.log(name + " " + email +" "+ event);
+
+
+        if (name && email && event) {
+            // alert("hello world");
+            alert(`Thank you for registering, ${name}! You've signed up for the ${event}.`);
+            form.reset();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            alert('Please fill out all fields.');
+        }
+    });
+
+
+     window.onscroll = function() {
+        const button = document.getElementById('backToTop');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    };
+
+    
+    document.getElementById('backToTop').addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+
     const themeToggle = document.getElementById('theme-toggle');
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -52,22 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission
-    const form = document.getElementById('registration-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const event = document.getElementById('event').value;
-
-        if (name && email && event) {
-            alert(`Thank you for registering, ${name}! You've signed up for the ${event}.`);
-            form.reset();
-        } else {
-            alert('Please fill out all fields.');
-        }
-    });
-
+    
     // Intersection Observer for fade-in animations
     const observerOptions = {
         root: null,
@@ -88,8 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 });
-=======
-  });
 
 
   document.addEventListener("mousemove", function (e) {
