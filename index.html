@@ -65,26 +65,64 @@
 
     <section id="schedule" class="event-schedule py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-10">Event Schedule</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="schedule-item p-6 bg-white rounded-lg shadow-md text-center">
-                    <h3 class="text-xl font-bold mb-2">Workshop on AI</h3>
-                    <p class="text-gray-600 mb-2"><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
-                    <p>Learn the fundamentals of Artificial Intelligence and its real-world applications in this expert-led workshop.</p>
+          <h2 class="text-3xl font-bold text-center mb-10">Event Schedule</h2>
+          <div class="container mx-auto p-4">
+            <div class="relative">
+              <!-- Vertical line for the timeline -->
+              <div class="absolute border-l-2 border-gray-300 left-1/2 transform -translate-x-1/2 h-full hidden md:block"></div>
+      
+              <!-- First Event: Workshop on AI -->
+              <div class="mb-8 flex flex-col md:flex-row justify-between items-center w-full event-item">
+                <div class="order-1 w-full md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-blue-500 shadow-md w-8 h-8 rounded-full mx-auto md:mx-0">
+                  <!-- AI Workshop SVG (Brain) -->
+                  <svg class="w-5 h-5 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c-4.418 0-8 2.686-8 6s3.582 6 8 6 8-2.686 8-6-3.582-6-8-6zM6.857 12.857A8.966 8.966 0 006 9h12c0 1.765-.635 3.412-1.857 4.857M8 18v.01M16 18v.01M12 18v.01"></path>
+                  </svg>
                 </div>
-                <div class="schedule-item p-6 bg-white rounded-lg shadow-md text-center">
-                    <h3 class="text-xl font-bold mb-2">Programming Competition</h3>
-                    <p class="text-gray-600 mb-2"><strong>Time:</strong> 1:00 PM - 3:00 PM</p>
-                    <p>Put your coding skills to the test and compete against peers in an intense programming competition.</p>
+                <div class="order-1 w-full md:w-5/12 px-6 py-4 bg-white rounded-lg shadow-md event-content mt-6 md:mt-0">
+                  <h3 class="text-xl font-bold mb-2">Workshop on AI</h3>
+                  <p class="text-gray-600 mb-2"><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+                  <p>Learn the fundamentals of Artificial Intelligence and its real-world applications in this expert-led workshop.</p>
                 </div>
-                <div class="schedule-item p-6 bg-white rounded-lg shadow-md text-center">
-                    <h3 class="text-xl font-bold mb-2">Networking Session</h3>
-                    <p class="text-gray-600 mb-2"><strong>Time:</strong> 4:00 PM - 6:00 PM</p>
-                    <p>Connect with industry professionals, students, and enthusiasts in a relaxed networking environment.</p>
+              </div>
+      
+              <!-- Second Event: Programming Competition -->
+              <div class="mb-8 flex flex-col md:flex-row-reverse justify-between items-center w-full event-item">
+                <div class="order-1 w-full md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-green-500 shadow-md w-8 h-8 rounded-full mx-auto md:mx-0">
+                  <!-- Coding Competition SVG (Code Brackets) -->
+                  <svg class="w-5 h-5 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l4-4-4-4m-8 8l-4-4 4-4"></path>
+                  </svg>
                 </div>
+                <div class="order-1 w-full md:w-5/12 px-6 py-4 bg-white rounded-lg shadow-md event-content mt-6 md:mt-0">
+                  <h3 class="text-xl font-bold mb-2">Programming Competition</h3>
+                  <p class="text-gray-600 mb-2"><strong>Time:</strong> 1:00 PM - 3:00 PM</p>
+                  <p>Put your coding skills to the test and compete against peers in an intense programming competition.</p>
+                </div>
+              </div>
+      
+              <!-- Third Event: Networking Session -->
+              <div class="mb-8 flex flex-col md:flex-row justify-between items-center w-full event-item">
+                <div class="order-1 w-full md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-yellow-500 shadow-md w-8 h-8 rounded-full mx-auto md:mx-0">
+                  <!-- Networking SVG (Link/Chain) -->
+                  <svg class="w-5 h-5 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H6a2 2 0 01-2-2V6a2 2 0 012-2h4m8 8h4a2 2 0 002-2V6a2 2 0 00-2-2h-4m-4 10v4a2 2 0 002 2h4a2 2 0 002-2v-4"></path>
+                  </svg>
+                </div>
+                <div class="order-1 w-full md:w-5/12 px-6 py-4 bg-white rounded-lg shadow-md event-content mt-6 md:mt-0">
+                  <h3 class="text-xl font-bold mb-2">Networking Session</h3>
+                  <p class="text-gray-600 mb-2"><strong>Time:</strong> 4:00 PM - 6:00 PM</p>
+                  <p>Connect with industry professionals, students, and enthusiasts in a relaxed networking environment.</p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
+      
 
     <section id="register" class="py-16 bg-gray-100">
         <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
