@@ -122,3 +122,20 @@ document.addEventListener('DOMContentLoaded', () => {
     follower.style.top = `${e.clientY}px`;
   });
   
+
+
+ // For Card effect in About
+ function vanish(number) {
+    document.getElementById(number).classList.add('anime');
+    setTimeout(function() {
+      document.getElementById(number).style.visibility = 'hidden';
+    }, 1000);
+}
+
+function goBack() {
+    var animatedElements = document.getElementsByClassName('anime');
+    for (var i = 0; i < animatedElements.length; i++) {
+        animatedElements[i].style.visibility = 'visible';
+        animatedElements[i].classList.remove('anime');
+    }
+}

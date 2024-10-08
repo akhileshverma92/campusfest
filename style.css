@@ -205,23 +205,91 @@ body.dark-mode .cta-button:hover {
     font-size: 1.1rem;
 }
 
-.about-image {
-    flex: 1;
+.about-container{
+    position: relative !important;
+    top: -3vmax;
+    left: -15vmax;
+    text-align: center;
+    font-size: 20px;
+    width: fit-content;
+    height: auto;
+    margin: 1vmax;
+    padding: 1vmax;
+    opacity: 0.9;
 }
 
-.about-image img {
-    width: 60%;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+.one, .two, .three, .four, .five, .six,.seven{
+    position: absolute;
+    min-height: 10vmax;
+    min-width: 9vmax;
+    max-width: 9vmax;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
-.about-image img:hover {
-    transform: scale(1.05);
+.one{
+    top: 10px;
+    left:10px;
 }
+
+.two{
+    top: 10px;
+    left:30px;
+}
+
+.three{
+    top: 10px;
+    left:50px;
+}
+
+.four{
+    top: 10px;
+    left:70px;
+}
+
+.five{
+    top: 10px;
+    left:90px;
+}
+
+.six{
+    top:10px;
+    left:110px;
+}
+
+.seven{
+    top:10px;
+    left:130px;
+    color: black;
+    background-color: red;
+}
+
+.anime {
+    position: absolute;
+    height: 11vmax;
+    width: 8vmax;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: center;
+    animation: fade 1s forwards;
+    opacity: 1;
+  }
+  
+
+  
+  @keyframes fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      width: 0px;
+    }
+  }
+  
+ 
+
+
 
 /* Schedule Section */
 .schedule {
