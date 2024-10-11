@@ -342,26 +342,6 @@ body.dark-mode .cta-button:hover {
 }
 
 /* Footer */
-footer {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    text-align: center;
-    padding: 3rem 0;
-}
-
-footer p {
-    margin-bottom: 0.5rem;
-}
-
-footer a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #4f46e5;
-}
 
 /* Dark mode styles */
 body.dark-mode {
@@ -398,7 +378,6 @@ body.dark-mode .submit-button {
 body.dark-mode .submit-button:hover {
     background-color: #3730a3;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {

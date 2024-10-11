@@ -1,0 +1,114 @@
+footer {
+    background: linear-gradient(135deg, #1e3a8a, #1c4bd9);
+    color: #e5e7eb;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-brand, 
+.social-section, 
+.footer-links {
+    flex: 1; 
+    min-width: 250px; 
+    margin-bottom: 20px;
+}
+
+.footer-brand h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #60a5fa;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.highlight-text {
+    color: #fbbf24;
+}
+
+.footer-brand h2:hover .highlight-text {
+    color: #ff5722;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 50px; 
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 28px;
+    background-color: rgba(96, 165, 250, 0.2);
+    padding: 12px;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons a:hover {
+    background-color: #fbbf24;
+    color: #1e40af;
+    transform: rotate(360deg) scale(1.1); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.footer-links a {
+    color: #dcdcdc;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, letter-spacing 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fbbf24;
+    letter-spacing: 1px;
+}
+
+.floating-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('https://www.transparenttextures.com/patterns/diagmonds.png') repeat;
+    opacity: 0.05;
+    animation: float 10s infinite alternate; 
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -15px); 
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-brand, 
+    .social-section, 
+    .footer-links {
+        margin-bottom: 40px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 40px;
+    }
+}
