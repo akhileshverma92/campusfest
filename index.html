@@ -10,24 +10,32 @@
   
     <style>
         
-       #backToTop {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: red;
-        color: white;
-        padding: 25px 25px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        font-size: 25px;
-        transition: background-color 0.3s ease; 
-      }
+        #backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff; 
+  color: white;
+  padding: 12px 15px;
+  border-radius: 20px; 
+  cursor: pointer;
+  display: none;
+  font-size: 17px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-    #backToTop:hover {
-        background-color: green;
-        animation: rotate 0.5s ease-in-out; 
-    }
+#backToTop:hover {
+  background-color: #0056b3; 
+  transform: translateY(-3px); 
+}
+
+#backToTop:after {
+  content: "⬆"; 
+  font-weight: bold
+}
+
 
     @keyframes rotate {
         from {
