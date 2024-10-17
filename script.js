@@ -1,19 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-
     const form = document.getElementById('registration-form');
+    
+    // Form submission and validation
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const event = document.getElementById('event').value;
- 
-        
-        // console.log(name + " " + email +" "+ event);
-
 
         if (name && email && event) {
-            // alert("hello world");
             alert(`Thank you for registering, ${name}! You've signed up for the ${event}.`);
             form.reset();
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -22,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
-     window.onscroll = function() {
+    // Back to top button visibility on scroll
+    window.onscroll = function() {
         const button = document.getElementById('backToTop');
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             button.style.display = "block";
@@ -32,93 +27,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    
+    // Scroll to top on button click
     document.getElementById('backToTop').addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-
-    const themeToggle = document.getElementById('theme-toggle');
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    // Dark mode toggle functionality
+    const darkModeToggle = document.getElementById('check');
+    const darkModeIconSun = document.getElementById('dark-mode-toggle');
+    const darkModeIconMoon = document.getElementById('dark-mode-toggle2');
     const body = document.body;
 
-    // Theme toggle functionality
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        updateThemeIcon();
-        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-    });
-
-    // Check for saved user preference
+    // Check for saved user preference for dark mode
     const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
     if (darkModeEnabled) {
         body.classList.add('dark-mode');
+        darkModeIconSun.classList.add('hidden');
+        darkModeIconMoon.classList.remove('hidden');
     }
-    updateThemeIcon();
 
-    function updateThemeIcon() {
-        const icon = themeToggle.querySelector('i');
+    // Toggle dark mode on checkbox click
+    darkModeToggle.addEventListener('change', () => {
+        body.classList.toggle('dark-mode');
         if (body.classList.contains('dark-mode')) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+            darkModeIconSun.classList.add('hidden');
+            darkModeIconMoon.classList.remove('hidden');
         } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
+            darkModeIconSun.classList.remove('hidden');
+            darkModeIconMoon.classList.add('hidden');
         }
-    }
-
-    // Mobile menu toggle
-    mobileMenuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
+        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
     });
 
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for navbar links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                // Close mobile menu if open
-                navLinks.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-            }
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         });
-    });
-
-    
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.about, .schedule, .register').forEach(section => {
-        observer.observe(section);
     });
 });
-
-
-  document.addEventListener("mousemove", function (e) {
-    const follower = document.getElementById("mouseFollower");
-    
-    // Move the follower div to the mouse position
-    follower.style.left = `${e.clientX}px`;
-    follower.style.top = `${e.clientY}px`;
-  });
-  

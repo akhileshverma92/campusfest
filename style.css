@@ -19,7 +19,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s , color 0.3s ;
 }
 
 .container {
@@ -159,6 +159,11 @@ header {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
 /* Dark mode styles */
 body.dark-mode .hero {
     background: linear-gradient(135deg, #4338ca, #3b82f6);
@@ -178,7 +183,17 @@ body.dark-mode .cta-button:hover {
     color: var(--text-color);
 }
 
+#dark-mode-toggle, #dark-mode-toggle2 {
+    cursor: pointer;
+}
+
+
 /* About Section */
+
+header, nav, footer {
+    background-color: #1f1f1f;
+}
+
 .about {
     padding: 8rem 0;
 }
@@ -500,6 +515,6 @@ body.dark-mode .submit-button:hover {
 }
 
 /* Smooth scrolling */
-html {
+body {
     scroll-behavior: smooth;
 }
