@@ -5,6 +5,12 @@
 
 A sleek, modern website for a college event that showcases an event schedule, registration form, and other important information. We are actively looking for contributors to enhance the UI/UX, add new features, and improve the website's overall functionality!
 
+Explore the live version of the app here:
+
+👉 [CAMPUSFEST](https://campusfest.vercel.app/) 👈
+
+---
+
 ## Table of Contents
 
 1. [Project Overview](#project-overview)

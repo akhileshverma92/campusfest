@@ -14,30 +14,15 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: red;
-        color: white;
-        padding: 25px 25px;
-        border-radius: 50%;
         cursor: pointer;
         display: none;
-        font-size: 25px;
-        transition: background-color 0.3s ease; 
+        width: 4rem;
+        transition: all .2s ease-in-out;
       }
 
     #backToTop:hover {
-        background-color: green;
-        animation: rotate 0.5s ease-in-out; 
+      transform: scale(1.1);
     }
-
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
 
      /* Hover Effect for Event Cards */
      .event-content {
@@ -211,7 +196,8 @@
 
     </footer>
 
-    <button id="backToTop">Top</button>
+    <img src="./assets/up-arrow.png" id="backToTop"></img>
+    
 
     <script src="script.js"></script>
 
